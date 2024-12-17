@@ -70,8 +70,26 @@ public class MyThread extends Thread {
 
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }  
 
     }
+
+    private static String getContentType(File f){
+        String[] s = f.getName().split("\\.");
+        String ext = s[s.length - 1];
+        switch (ext) {
+            case "html":
+                return "text/html";    
+            case "txt":
+                return "text/txt";
+            case "png":
+                return "image/png";
+            case "css":
+                return "text/css";
+            default:
+                return "";
+        }
+    }
+    
 
 }
